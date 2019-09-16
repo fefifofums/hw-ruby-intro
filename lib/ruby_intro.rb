@@ -3,21 +3,50 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  sum = 0
+  if arr.size == 0
+    return 0
+  end
+  arr.each {|x| sum += x}
+  return sum
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  if arr.size == 0
+    return 0
+  end
+
+  if arr.size == 1
+    return arr[0]
+  end
+
+  arr.sort!
+  return arr[-1] + arr[-2]
+
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  if arr.size < 2
+    return false
+  end
+
+  for i in arr do
+    for x in arr do
+      if i == x
+        next
+      end
+      if (x + i) == n
+        return true
+      end
+    end
+  end
+  return false
 end
 
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, " + name
 end
 
 def starts_with_consonant? s
