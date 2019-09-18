@@ -4,9 +4,8 @@
 
 def sum arr
   sum = 0
-  if arr.size == 0
-    return 0
-  end
+  return 0 if arr.size == 0
+
   arr.each {|x| sum += x}
   return sum
 end
@@ -51,17 +50,25 @@ def starts_with_consonant? s
 end
 
 def binary_multiple_of_4? s
-  if s.match?(/[^1*0*]+|^\s*$/)
-    return false
-  end
+  return false if s.match?(/[^1*0*]+|^\s*$/)
   return (s.to_i(10) % 4) == 0
 end
 
 # Part 3
 
 class BookInStock
-  #def initialize(isbn, price)
-  #  @isbn = isbn
-  #  @price = price
-  #end
+  attr_accessor :isbn, :price
+
+  def initialize(isbn, price)
+    raise ArgumentError.new("Invalid ISBN") if isbn.length < 1
+    @isbn = isbn
+    raise ArgumentError.new("Invalid price") if price <= 0
+    @price = price
+  end
+
+  def price_as_string
+    sprintf("$%.2f", price)
+  end
+
+
 end
