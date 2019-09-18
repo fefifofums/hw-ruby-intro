@@ -14,9 +14,7 @@ end
 def max_2_sum arr
   if arr.size == 0
     return 0
-  end
-
-  if arr.size == 1
+  elsif arr.size == 1
     return arr[0]
   end
 
@@ -34,8 +32,7 @@ def sum_to_n? arr, n
     for x in arr do
       if i == x
         next
-      end
-      if (x + i) == n
+      elsif (x + i) == n
         return true
       end
     end
@@ -50,15 +47,21 @@ def hello(name)
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  return s.match?(/\A[^eaiou\W]/i)
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  if s.match?(/[^1*0*]+|^\s*$/)
+    return false
+  end
+  return (s.to_i(10) % 4) == 0
 end
 
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  #def initialize(isbn, price)
+  #  @isbn = isbn
+  #  @price = price
+  #end
 end
