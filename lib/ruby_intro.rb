@@ -57,6 +57,8 @@ end
 # Part 3
 
 class BookInStock
+  #https://dev.to/k_penguin_sato/ruby-getters-and-setters-1p30#targetText=Accessors%20are%20a%20way%20to,method%20for%20each%20given%20attribute.
+  #How to get and set
   attr_accessor :isbn, :price
 
   def initialize(isbn, price)
